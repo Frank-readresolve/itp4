@@ -1,0 +1,6 @@
+function execute() {
+	return "Hello world!";
+}
+
+const result = execute();
+console.log(result);

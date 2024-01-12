@@ -1,0 +1,11 @@
+const args = process.argv; // Node
+const params = args.slice(2);
+
+function execute(text) {
+	return text;
+}
+
+const text = params[0];
+
+const result = execute(text);
+console.log(result);
