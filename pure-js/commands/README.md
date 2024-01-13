@@ -31,9 +31,9 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 - On top of file, retrieve Node's arguments then slice the array to exclude the 2 first Node's specific arguments you don't need to implement the commands
 - A function named `execute` with or without parameters as required, the function returns the expected type as required (string, number, boolean&hellip;)
 - Declare and read required parameters after the function declaration
-- Call the functions with required arguments and store the returned value in a result constant
+- Call the functions with required parameters and store the returned value in a `result` constant
 - Print the result in the console. Only one `console.log` in the command's file
-- Note: for all commands in this batch we consider that the user inputs valid parameters, so input validation is not expected
+- Note: for all commands in this batch we consider that the user inputs valid arguments, so input validation is not expected
 
 #### Command `add`
 - Write a command which adds two numbers as command line arguments
