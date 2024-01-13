@@ -91,7 +91,8 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 - Must have `n` characters from these `classes`: `4` x `a-z`, `4` x `A-Z`, `4` x `0-9` and `1` x `@&#";!*=`. A character from one class can appear more than once
 - Classes must be "mixed up", each character from any class should appear anywhere in the generated text
 
-> From now, including the `passw` command, you can use `Math.random()` and `Math.floor()` as built-in functions in addition to priviously listed built-in functions
+> [!IMPORTANT]
+> From now, including the `passw` command, you can use `Math.random()` and `Math.floor()` as built-in functions in addition to priviously listed built-in functions.
 
 #### Command `invoice`
 - Write a command which calculates the details and totals (with and without VAT) for an invoice
@@ -107,3 +108,22 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 - Try to infer the conversion rules from the examples below (no more/no less) to handle JS strings, booleans and numbers only
 - Input: `fmtstrtojson "firstName='Toto' lastName='MIAOU' happy=true age=16 nickname='false'"`
 - Output: `{"firstName": "Toto", "lastName": "MIAOU", "happy": true, "age": 16, "nickname": "false"}`
+
+#### Command `pokemon`
+> [!NOTE]
+> You're tired of serious commands above, take a break! This command offers a moment of peace and serenity. Enjoy!
+- Write a command which prints some information related to a Pokemon thanks to its name
+- Input: `pokemon Luxray`
+- Output:
+```
+!!! Stats for pokemon 'Luxray', identifier 405 !!!
+-> Hit points: 80
+-> Attack: 120
+-> Defense: 79
+-> Special attack: 95
+-> Special defense: 79
+-> Speed: 70
+-> Image: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/405.png``
+```
+> [!IMPORTANT]
+> From now, including the `pokemon` command, you can use `fetch()` and `json()` as built-in functions in addition to priviously listed built-in functions.
