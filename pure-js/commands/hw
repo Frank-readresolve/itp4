@@ -1,6 +1,12 @@
+// Simple command with no arguments returning a string
+// No need to retrieve/read node argv
+
+// execute function with no parameters
 function execute() {
 	return "Hello world!";
 }
 
+// Declare result to store execute return value
 const result = execute();
+// Write result to the standard output
 console.log(result);

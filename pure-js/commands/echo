@@ -1,11 +1,16 @@
-const args = process.argv; // Node
+// Retrieve/reag node's arguments from process.argv
+const args = process.argv;
+// Slice the array to exclude the 2 first arguments we do not need
 const params = args.slice(2);
 
 function execute(text) {
 	return text;
 }
 
+// Read required params from command line arguments
+// Store each one in specific constant
 const text = params[0];
 
+// Call execute with required parameters
 const result = execute(text);
 console.log(result);

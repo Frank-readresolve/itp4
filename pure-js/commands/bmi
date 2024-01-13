@@ -5,6 +5,7 @@ function execute(weight, height) {
 	return weight / (height * height);
 }
 
+// When required, parse strings to expected input types
 const weight = parseFloat(params[0]);
 const height = parseFloat(params[1]);
 
