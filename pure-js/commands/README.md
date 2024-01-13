@@ -100,7 +100,7 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 
 #### Command `passw`
 - Write a command which generates a random text (password), no arguments
-- Must have `n` characters from these `classes`: `4` x `a-z`, `4` x `A-Z`, `4` x `0-9` and `1` x `@&#";!*=`. A character from one class can appear more than once
+- Must have `n` characters from these `classes`: `4` x `a-z`, `4` x `A-Z`, `4` x `0-9` and `1` x `@&#";!*=`. A same character from one class can appear more than once (e.g. 2 x "A")
 - Classes must be "mixed up", each character from any class should appear anywhere in the generated text
 - Input: `passw`
 - Output: `aX12bS8dY9*p`
