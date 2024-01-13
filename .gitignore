@@ -1,0 +1,5 @@
+# .gitignore file to ignore files and folders not to share in a repository
+# **/ a pattern to indicate in any (sub)folder of the repository
+# .DS_Store hidden macOS file for custom attributes
+**/.DS_Store
+
