@@ -1,0 +1,13 @@
+const args = process.argv;
+const params = args.slice(2);
+
+function execute(a) {
+        // ** exponentiation operator
+	// First operand to the power of the second operand
+	return a ** 2; // same as a * a
+}
+
+const a = parseFloat(params[0]);
+
+const result = execute(a);
+console.log(result);

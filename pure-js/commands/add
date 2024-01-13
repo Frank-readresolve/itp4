@@ -1,0 +1,12 @@
+const args = process.argv;
+const params = args.slice(2);
+
+function execute(a, b) {
+        return a + b;
+}
+
+const a = parseFloat(params[0]);
+const b = parseFloat(params[1]);
+
+const result = execute(a, b);
+console.log(result);
