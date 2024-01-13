@@ -1,20 +1,31 @@
 # Simple command line interpreter in JavaScript
-Objectives: design and implement sequentially a simple command line interpreter in JavaScript running in a Node.js evironment.
+**Objectives**: design and implement step by step a simple "command line interpreter" and some commands (small programs) in JavaScript running in a Node.js evironment.
 
-Prerequisites to start:
+**Prerequisites**:
+- Basic usage of a "terminal" (having fiddled with some command lines)
 - Basic algorithmic skills
-- Basic knowledge of programming in JavaScript
 - Basic knowledge of a computer program execution
-- Node.js installed and use of `node` command from a "terminal"
+- Basic knowledge of programming in JavaScript
+- Node.js installed and usage of `node` command from a "terminal"
 
 ## Constraints
-- Allowed built-in functions: `split()`, `slice()`, `parseInt()`, `parseFloat()`. You will be authorized to use new built-in functions from certain commands
+- Allowed built-in functions: `split()`, `slice()`, `parseInt()`, `parseFloat()`. You will be authorized to use new built-in functions from certain commands, this information is highlighted
 - Inputs and outputs are only examples, not a unique use case!
 - Test your commands with varied inputs to be sure you meet the requirements
 - For all commands, unless otherwise stated, we consider that the user inputs valid parameters, so input validation is not expected in such cases
 
+## Advices
+- [Keep It Simple Stupid](https://fr.wikipedia.org/wiki/Principe_KISS)
+- Read carefully and understand the requirements! Just like any manual ([RTFM](https://fr.wikipedia.org/wiki/RTFM_(expression)))
+
+![rtfm](https://github.com/Frank-readresolve/itp4/assets/32057169/e1cf18d4-7804-41ca-b094-2502f5cf6c01)
+© [Yann Forget](https://commons.wikimedia.org/wiki/User:Yann) / [Wikimedia Commons](https://commons.wikimedia.org/)
+
 ## Commands to implement
 All commands must be in the `commands` folder, named with the name of the command to implement, lowercase, no extension. So what we call here a "command" is a JavaScript file with no extension, which is executed with Node.js. Example: `node echo "Hello wolrd!"`.
+
+> [!NOTE]
+> **Break commands**. You'll find notes like this one, they indicate a **break command** you can start and try to implement whenever you want, no need to finish previous ones. These commands bring you joy and fun but remain serious coding problems to resolve.
 
 ### Batch 1
 Code structure must be the same as the `bim`, `echo` and `hw` examples in this folder, no other structure. That means:
@@ -56,7 +67,7 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 
 #### Command `cntocc`
 - Write a command which counts the number of occurences of a letter in a string as command line arguments
-- Input: `cntocc "Hello world!" "l"`
+- Input: `cntocc "Hello world!" l`
 - Output: `3`
 
 #### Command `statsn`
@@ -103,7 +114,7 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 - Unit prices are without VAT
 - VAT is input in `%`
 - Results do not have to be rounded
-- Input: `invoice "bread, butter, coca-cola light" "2,1,3" ".94,1.88,2.09 5.5,5.5,20.0"`
+- Input: `invoice "bread, butter, soda light" "2,1,3" ".94,1.88,2.09 5.5,5.5,20.0"`
 - Expected output description: one line per product with name, quantity, unit price, total without VAT, VAT rate, total with VAT. Then one last line with the total without VAT and total with VAT
 
 #### Command `fmtstrtojson`
@@ -112,14 +123,23 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 - Input: `fmtstrtojson "firstName='Toto' lastName='MIAOU' happy=true age=16 nickname='false'"`
 - Output: `{"firstName": "Toto", "lastName": "MIAOU", "happy": true, "age": 16, "nickname": "false"}`
 
-#### Command `pokemon`
+#### Command `pokestats` (break)
 > [!NOTE]
-> You're tired of serious commands above, take a break! This command offers a moment of peace and serenity. Enjoy!
-- Write a command which prints some information related to a Pokemon thanks to its name as a command line single argument
-- Input: `pokemon Luxray`
+> **Break command**. You're tired of serious commands above, have a break! This command offers a moment of peace and serenity. Enjoy!
+- Write a command which prints some statistics related to a Pokemon given its name as a command line argument
+- In case of any HTTP error or if the Pokemon is not found the output should be `Pokemon with name 'xxx' not found` where `xxx` is the argument of the command (unknown name)
+- API to fetch from: [Pokebuild](https://pokebuildapi.fr/api/v1)
+- Find out, reading the docs, the endpoint to call and the required data to keep in the returned JSON in order to build the output string (see example here after)
+- Tech tip: as you need to `await` the call to `fetch`, the `execute` function needs to be marked as `async`. In consequences the call to `execute` needs to be in an `async` context also but the call is not within a method which we can mark `async`. Solution: [IIFE (Immediately Invoked Function Expression)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE), for this command you can declare the call to `execute` and the `console.log` into an IIFE:
+```javascript
+(async () => {
+      // Your code (execute + console.log)
+})();
+```
+- Input: `pokestats "Luxray"`
 - Output:
 ```
-!!! Stats for pokemon 'Luxray', identifier 405 !!!
+!!! Stats for Pokemon 'Luxray', identifier 405 !!!
 -> Hit points: 80
 -> Attack: 120
 -> Defense: 79
@@ -129,4 +149,4 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 -> Image: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/405.png``
 ```
 > [!IMPORTANT]
-> From now, including the `pokemon` command, you can use `fetch()` and `json()` as built-in functions in addition to priviously listed built-in functions.
+> From now, including the `pokestats` command, you can use `fetch()` and `json()` as built-in functions in addition to priviously listed built-in functions.
