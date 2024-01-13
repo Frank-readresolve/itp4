@@ -146,7 +146,7 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 -> Special attack: 95
 -> Special defense: 79
 -> Speed: 70
--> Image: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/405.png``
+-> Image: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/405.png
 ```
 > [!IMPORTANT]
 > From now, including the `pokestats` command, you can use `fetch()` and `json()` as built-in functions in addition to priviously listed built-in functions.
