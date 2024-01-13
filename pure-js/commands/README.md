@@ -10,7 +10,7 @@
 
 **Pay attention to**:
 - Allowed built-in functions: `split()`, `slice()`, `parseInt()`, `parseFloat()`. You will be authorized to use new built-in functions from certain commands, this information is highlighted where it's needed the first time
-- Inputs and outputs are only examples, not a unique use cases!
+- Inputs and outputs are only examples, not a unique use case!
 - Test your commands with varied inputs to be sure you meet the requirements
 
 ## Advices
