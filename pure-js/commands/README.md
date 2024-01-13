@@ -133,7 +133,7 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 - Tech tip: as you need to `await` the call to `fetch`, the `execute` function needs to be marked as `async`. In consequences the call to `execute` needs to be in an `async` context also but the call is not within a method which we can mark `async`. Solution: [IIFE (Immediately Invoked Function Expression)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE), for this command you can declare the call to `execute` and the `console.log` into an IIFE:
 ```javascript
 (async () => {
-      // Your code (execute + console.log)
+      // Your code (call to execute + console.log)
 })();
 ```
 - Input: `pokestats "Luxray"`
