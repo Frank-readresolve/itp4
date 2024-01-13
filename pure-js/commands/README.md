@@ -21,7 +21,7 @@
 © [Yann Forget](https://commons.wikimedia.org/wiki/User:Yann) / [Wikimedia Commons](https://commons.wikimedia.org/)
 
 ## Commands to implement
-All commands must be in the `commands` folder, named with the name of the command to implement, lowercase, no extension. So what we call here a "command" is a JavaScript file with no extension, which is executed with Node.js. Example: `node echo "Hello wolrd!"`.
+All commands must be in the `commands` folder, named with the name of the command to implement, lowercase, no extension. So what we call here a "command" is a JavaScript file with no extension, which is executed with Node.js. Example: `node echo "Hello world!"`.
 
 > [!NOTE]
 > **Break commands**. You'll find notes like this one. They indicate a **break command** you can start and try to implement whenever you want, you are free, no need to finish previous ones. These commands bring you joy and fun but remain serious problems to resolve.
@@ -109,12 +109,12 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 > From now, including the `passw` command, you can use `Math.random()` and `Math.floor()` as built-in functions in addition to priviously listed built-in functions.
 
 #### Command `invoice`
-- Write a command which calculates the details and totals (with and without VAT) for an invoice, that's three arguments
-- Products, quantities, unit prices and rates are ordered and have the same number of "elements"
+- Write a command which calculates the details and totals (with and without VAT) for an invoice
+- Products, quantities, unit prices and rates are ordered and have the same number of "elements", four command line arguments
 - Unit prices are without VAT
 - VAT is input in `%`
 - Results do not have to be rounded
-- Input: `invoice "bread, butter, soda light" "2,1,3" ".94,1.88,2.09 5.5,5.5,20.0"`
+- Input: `invoice "bread, butter, soda light" "2,1,3" ".94,1.88,2.09" "5.5,5.5,20.0"`
 - Expected output description: one line per product with name, quantity, unit price, total without VAT, VAT rate, total with VAT. Then one last line with the total without VAT and total with VAT
 
 #### Command `fmtstrtojson`
