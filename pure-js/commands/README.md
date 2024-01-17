@@ -10,7 +10,7 @@
 
 **Pay attention to**:
 - Allowed built-in functions: `split()`, `slice()`, `parseInt()`, `parseFloat()`. You will be authorized to use new built-in functions from certain commands, this information is highlighted where it's needed the first time
-- Inputs and outputs are only examples, not a unique use cases!
+- Inputs and outputs are only examples, not a unique use case!
 - Test your commands with varied inputs to be sure you meet the requirements
 
 ## Advices
@@ -21,7 +21,7 @@
 © [Yann Forget](https://commons.wikimedia.org/wiki/User:Yann) / [Wikimedia Commons](https://commons.wikimedia.org/)
 
 ## Commands to implement
-All commands must be in the `commands` folder, named with the name of the command to implement, lowercase, no extension. So what we call here a "command" is a JavaScript file with no extension, which is executed with Node.js. Example: `node echo "Hello wolrd!"`.
+All commands must be in the `commands` folder, named with the name of the command to implement, lowercase, no extension. So what we call here a "command" is a JavaScript file with no extension, which is executed with Node.js. Example: `node echo "Hello world!"`.
 
 > [!NOTE]
 > **Break commands**. You'll find notes like this one. They indicate a **break command** you can start and try to implement whenever you want, you are free, no need to finish previous ones. These commands bring you joy and fun but remain serious problems to resolve.
@@ -31,9 +31,9 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 - On top of file, retrieve Node's arguments then slice the array to exclude the 2 first Node's specific arguments you don't need to implement the commands
 - A function named `execute` with or without parameters as required, the function returns the expected type as required (string, number, boolean&hellip;)
 - Declare and read required parameters after the function declaration
-- Call the functions with required arguments and store the returned value in a result constant
+- Call the functions with required parameters and store the returned value in a `result` constant
 - Print the result in the console. Only one `console.log` in the command's file
-- Note: for all commands in this batch we consider that the user inputs valid parameters, so input validation is not expected
+- Note: for all commands in this batch we consider that the user inputs valid arguments, so input validation is not expected
 
 #### Command `add`
 - Write a command which adds two numbers as command line arguments
@@ -100,7 +100,7 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 
 #### Command `passw`
 - Write a command which generates a random text (password), no arguments
-- Must have `n` characters from these `classes`: `4` x `a-z`, `4` x `A-Z`, `4` x `0-9` and `1` x `@&#";!*=`. A character from one class can appear more than once
+- Must have `n` characters from these `classes`: `4` x `a-z`, `4` x `A-Z`, `4` x `0-9` and `1` x `@&#";!*=`. A same character from one class can appear more than once (e.g. 2 x "A")
 - Classes must be "mixed up", each character from any class should appear anywhere in the generated text
 - Input: `passw`
 - Output: `aX12bS8dY9*p`
@@ -109,12 +109,12 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 > From now, including the `passw` command, you can use `Math.random()` and `Math.floor()` as built-in functions in addition to priviously listed built-in functions.
 
 #### Command `invoice`
-- Write a command which calculates the details and totals (with and without VAT) for an invoice, that's three arguments
-- Products, quantities, unit prices and rates are ordered and have the same number of "elements"
+- Write a command which calculates the details and totals (with and without VAT) for an invoice
+- Products, quantities, unit prices and rates are ordered and have the same number of "elements", four command line arguments
 - Unit prices are without VAT
 - VAT is input in `%`
 - Results do not have to be rounded
-- Input: `invoice "bread, butter, soda light" "2,1,3" ".94,1.88,2.09 5.5,5.5,20.0"`
+- Input: `invoice "bread, butter, soda light" "2,1,3" ".94,1.88,2.09" "5.5,5.5,20.0"`
 - Expected output description: one line per product with name, quantity, unit price, total without VAT, VAT rate, total with VAT. Then one last line with the total without VAT and total with VAT
 
 #### Command `fmtstrtojson`
@@ -133,7 +133,7 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 - Tech tip: as you need to `await` the call to `fetch`, the `execute` function needs to be marked as `async`. In consequences the call to `execute` needs to be in an `async` context also but the call is not within a method which we can mark `async`. Solution: [IIFE (Immediately Invoked Function Expression)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE), for this command you can declare the call to `execute` and the `console.log` into an IIFE:
 ```javascript
 (async () => {
-      // Your code (execute + console.log)
+      // Your code (call to execute + console.log)
 })();
 ```
 - Input: `pokestats "Luxray"`
@@ -146,7 +146,7 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 -> Special attack: 95
 -> Special defense: 79
 -> Speed: 70
--> Image: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/405.png``
+-> Image: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/405.png
 ```
 > [!IMPORTANT]
 > From now, including the `pokestats` command, you can use `fetch()` and `json()` as built-in functions in addition to priviously listed built-in functions.
