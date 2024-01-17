@@ -1,0 +1,29 @@
+// Find the responsibilities of the program
+// Retrieve inputs for our program
+const args = process.argv;
+const params = args.slice(2);
+
+
+// Implement the business logic of the program
+function execute(numbers) {
+	let sum = 0;
+	for(let i = 0; i < numbers.length; i++) {
+		sum += numbers[i];
+	}
+	return sum;
+}
+
+// Convert inputs into expected types (numbers)
+const input = params[0]; // "1,2,3,4,5,6"
+// Convert input into an array of number
+const candidates = input.split(","); // ["1","2","3"]
+for(let i = 0; i < candidates.length; i++) {
+	const candidate = candidates[i]; // i = 0 => "1"
+	candidates[i] = parseFloat(candidate);
+}
+
+// console.table(candidates);
+
+// Display, print the result
+const result = execute(candidates);
+console.log(result);
