@@ -1,0 +1,12 @@
+{
+  "name": "itp4-cli",
+  "version": "1.0.0",
+  "description": "My second CLI in Node.js",
+  "main": "cli.js",
+  "author": "Frank MARSHALL",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "inquirer": "^9.2.12"
+  }
+}
