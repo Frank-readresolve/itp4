@@ -3,3 +3,4 @@
 # .DS_Store hidden macOS file for custom attributes
 **/.DS_Store
 
+**/node_modules
