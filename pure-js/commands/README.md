@@ -85,6 +85,12 @@ Code structure must be the same as the `bim`, `echo` and `hw` examples in this f
 - Input: `unqstr "Hello world!"`
 - Output: `['H','e','w',' ','r','d','!']`
 
+#### Command `arrangeoe`
+- Write a command which arranges odd and even numbers from a list of `n` integers separeted by a comma as command line single argument
+- Odds and evens should be in a separate array, each array as element of an including array
+- Input: `arrangeoe "2,5,6,9,3,18"`
+- Output: `[[2, 6, 18], [5, 9, 3]]`
+
 #### Command `pairs`
 - Write a command which returns pairs of equal letters from a "shuffled" list of letters as command line single argument, excluding letters appearing once or more than twice. Order of returned pairs is not important
 - Input: `pairs "a,c,b,a,b,c,h,h,h,o"`
