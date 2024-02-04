@@ -1,39 +1,26 @@
 import inquirer from 'inquirer';
-import {default as hw} from './src/commands/hw.js';
-import {default as sum} from './src/commands/sum.js';
+import dispatch from './src/utilities/dispatcher.js'
 
 async function run() {
-	let found = 0, notFound = 0;
-	program: while(true) { // Infinite loop
+	let hits = 0, notFound = 0;
+	program: while (true) {
 		const candidate = await inquirer.prompt([
-			{ name: 'cmdLine', 
-			message: '#>'} // JS object
+			{
+				name: 'cmdLine',
+				message: '#>'
+			}
 		]);
-		// cmdLine = sum 1,2,3,5,9
-		const cmdLine = candidate.cmdLine; // read JS object
+		const cmdLine = candidate.cmdLine;
 		const tokens = cmdLine.split(' ');
-		// ['sum', '1,2,3,5,9']
-		const cmdName = tokens[0]; // sum
-		// ternary operator:
-		// tokens[1] = '1,2,3,5,9'
-		const cmdArg = tokens.length > 1 ? tokens[1] : undefined;
-		if(cmdName === 'exit' || cmdName === 'logout') {
-			found++;
-			console.log(`f=${found}, nf=${notFound}, h=${found + notFound}`);
+		const cmdName = tokens[0];
+		const args = tokens.slice(1);
+		hits++;
+		if (cmdName === 'exit' || cmdName === 'logout') {
 			break program;
-		} else if(cmdName === 'hw') {
-			found++;
-			// call execute in module hw.js
- 			const result = hw();
-			console.log(result);
-		} else if(cmdName === 'sum') {
-			found++;
-			const result = sum(cmdArg);
-			console.log(result);
-		} else { // Toto
-			notFound++;
-			console.log(`Command not found: ${cmdName}`);
 		}
+		const output = await dispatch(cmdName, args);
+		console.log(output);
 	}
+	console.log(`f=${hits - notFound}, nf=${notFound}, h=${hits}`);
 }
 run();
