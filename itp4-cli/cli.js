@@ -1,26 +1,20 @@
-import inquirer from 'inquirer';
-import dispatch from './src/utilities/dispatcher.js'
+import prompt from './src/utilities/prompt.js';
+import dispatch from './src/utilities/dispatcher.js';
+import stats from './src/utilities/stats.js';
+import { parseCommandLine } from './src/utilities/parsers.js';
 
 async function run() {
-	let hits = 0, notFound = 0;
 	program: while (true) {
-		const candidate = await inquirer.prompt([
-			{
-				name: 'cmdLine',
-				message: '#>'
-			}
-		]);
-		const cmdLine = candidate.cmdLine;
-		const tokens = cmdLine.split(' ');
-		const cmdName = tokens[0];
-		const args = tokens.slice(1);
-		hits++;
+		const input = await prompt();
+		const commandLine = parseCommandLine(input);
+		const cmdName = commandLine.commandName;
 		if (cmdName === 'exit' || cmdName === 'logout') {
+			stats.hitFound();
 			break program;
 		}
-		const output = await dispatch(cmdName, args);
+		const output = await dispatch(commandLine);
 		console.log(output);
 	}
-	console.log(`f=${hits - notFound}, nf=${notFound}, h=${hits}`);
+	console.log(`f=${stats.found}, nf=${stats.notFound}, h=${stats.hits}`);
 }
 run();
