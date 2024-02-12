@@ -40,7 +40,7 @@ async function send() {
     }
     // try-catch to handle potential client/server communication errors
     try {
-        const response = await fetch('xhttps://gateway.readresolve.tech:9443/sms', options);
+        const response = await fetch('https://gateway.readresolve.tech:9443/sms', options);
         if (response.status === 202) { // Expected success status code
             form.reset();
             alert('Wow you are lucky mate, everything is okay!');
