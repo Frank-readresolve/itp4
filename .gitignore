@@ -6,8 +6,10 @@
 **/node_modules
 
 **/bin
+**/target
 
 **/.classpath
 **/.project
 **/.settings
-
+**/.apt_generated
+**/.metadata
