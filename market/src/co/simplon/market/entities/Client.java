@@ -1,15 +1,15 @@
-package co.simplon.market;
+package co.simplon.market.entities;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Client {
 
     private String name;
     private float budget;
-    private ArrayList<ShoppingListItem> items;
+    private List<ShoppingListItem> items;
 
     // constructor
-    public Client(String name, float budget, ArrayList<ShoppingListItem> items) {
+    public Client(String name, float budget, List<ShoppingListItem> items) {
 	this.name = name;
 	this.budget = budget;
 	this.items = items;
@@ -23,7 +23,7 @@ public class Client {
 	return budget;
     }
 
-    public ArrayList<ShoppingListItem> getItems() {
+    public List<ShoppingListItem> getItems() {
 	return items;
     }
 

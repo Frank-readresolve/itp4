@@ -1,12 +1,12 @@
-package co.simplon.market;
+package co.simplon.market.entities;
 
 public class Merchant {
 
     private String name;
-    private String type;
+    private ProductType type;
     private int stock;
 
-    public Merchant(String name, String type, int stock) {
+    public Merchant(String name, ProductType type, int stock) {
 	this.name = name;
 	this.type = type;
 	this.stock = stock;
@@ -16,7 +16,7 @@ public class Merchant {
 	return name;
     }
 
-    public String getType() {
+    public ProductType getType() {
 	return type;
     }
 

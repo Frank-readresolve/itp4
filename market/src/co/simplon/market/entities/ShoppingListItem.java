@@ -1,4 +1,4 @@
-package co.simplon.market;
+package co.simplon.market.entities;
 
 public class ShoppingListItem {
 

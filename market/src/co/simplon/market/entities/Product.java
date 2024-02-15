@@ -1,17 +1,17 @@
-package co.simplon.market;
+package co.simplon.market.entities;
 
 public class Product {
-    private String type;
+    private ProductType type;
     private String name;
     private float price;
 
-    public Product(String type, String name, float price) {
+    public Product(ProductType type, String name, float price) {
 	this.type = type;
 	this.name = name;
 	this.price = price;
     }
 
-    public String getType() {
+    public ProductType getType() {
 	return type;
     }
 
