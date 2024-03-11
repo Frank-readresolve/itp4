@@ -13,3 +13,6 @@
 **/.settings
 **/.apt_generated
 **/.metadata
+
+**/application-dev.properties
+
