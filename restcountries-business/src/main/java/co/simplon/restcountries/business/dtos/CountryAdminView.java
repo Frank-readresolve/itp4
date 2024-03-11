@@ -12,4 +12,6 @@ public interface CountryAdminView {
     double getCountryArea();
 
     String getFlagUrl();
+
+    String getGoogleMapsUrl();
 }
