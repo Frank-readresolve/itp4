@@ -1,10 +1,10 @@
 let target = null;
-const registry =  new Map();
+const registry = new Map();
 
 function initRouter(routes) {
     target = document.querySelector(routes.target); // #root
     const mappings = routes.mappings; // array of object
-    for(let i = 0; i < mappings.length; i++) {
+    for (let i = 0; i < mappings.length; i++) {
         const mapping = mappings[i]; // {name: '', component :''}
         // HomeComponent = <rc-homecomponent></rc-homecomponent>
         const name = 'rc-' + mapping.component.toLowerCase();

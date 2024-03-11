@@ -9,7 +9,7 @@ export default class HomeComponent extends BaseComponent {
     }
 
     async beforeRender() {
-        const url = 'https://restcountries.com/v3.1/region/europe?fields=name,flags,capital,population';
+        const url = 'http://localhost:8080/countries';
         const countries = await getJson(url);
         this.data.countries = countries;
         // console.log(countries);
@@ -20,9 +20,7 @@ export default class HomeComponent extends BaseComponent {
         <main class="container mb-3">
             <h1 class="display-5">${msg('rcHomeTitle')}</h1>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 m-0 g-2">
-                ${this.data.countries.map((country) => {
-                    return this.countryCard(country);
-                }).join('')}
+                ${this.data.countries.map((country) => { return this.countryCard(country); }).join('')}
             </div>
         </main>
         `;
@@ -32,15 +30,15 @@ export default class HomeComponent extends BaseComponent {
         return /*html*/`
         <div>
             <div class="card h-100 shadow-sm">
-                <img src="${country.flags.png}" class="card-img-top">
+                <a href="${country.googleMapsUrl}" target="_blank"><img src="${country.flagUrl}" class="card-img-top"></a>
                 <div class="card-body border-top">
-                    <h2 class="card-title fs-3">${country.name.official}</h2>
-                    <h3 class="fs-4 display-5">${country.capital[0]}</h3>
+                    <h2 class="card-title fs-3">${country.countryName}</h2>
+                    <h3 class="fs-4 display-5">${country.capitalName}</h3>
                     <span class="text-nowrap"><i class="bi bi-person-arms-up"></i> ${fmtNum(country.population)}</span>
                 </div>
             </div>
         </div>
         `;
     }
-    
+
 }
